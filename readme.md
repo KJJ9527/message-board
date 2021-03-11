@@ -1,8 +1,12 @@
-## tab栏切换的说明
+## 简单留言板的说明
 
-重点掌握 setAttribute，getAttribute
+创建元素节点 createElement;
 
-当list里面的li点击时，如何知道是哪个li在点击,用setAttribute创建li的索引值，将getAttribute获取li的索引值用变量存起来。
+添加节点 insertBefore   node.insertBefore(child,指定元素);
 
-点击li时，下面对应序号的内容显示，其余隐藏。
+添加节点 appendChild(child) 注意这个是后面追加元素,类似于数组中的push;
+
+需要注意是点击按钮后再创建元素节点;
+
+将text的值赋值给元素节点的innerHTML;
 
