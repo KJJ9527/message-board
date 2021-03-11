@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 400px;
+            height: 60px;
+            resize: none;
+        }
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>简单的留言板</h1>
+    <textarea maxlength="200"></textarea>
+    <button type="submit" class="btn">提交</button>
+    <ul class="container"></ul>
+    <script>
+        var text = document.querySelector('textarea');
+        var btn = document.querySelector('.btn');
+        var container = document.querySelector('.container');
+        btn.onclick = function() {
+            if(text.value == "") {
+                alert('请输入内容');
+                return false;
+            } else {
+                // 点击按钮后，创建一个元素节点
+            var li = document.createElement('li');
+            li.innerHTML = text.value;
+            // 将创建的节点添加到ul里
+            container.insertBefore(li,container.children[0]);
+            }
+        }
+    </script>
+</body>
+</html>
