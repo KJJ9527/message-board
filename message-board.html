@@ -13,6 +13,13 @@
         }
         li {
             list-style: none;
+            background-color: pink;
+            width: 200px;
+            margin: 20px;
+        }
+        li a {
+            text-decoration: none;
+            float: right;
         }
     </style>
 </head>
@@ -31,10 +38,19 @@
                 return false;
             } else {
                 // 点击按钮后，创建一个元素节点
-            var li = document.createElement('li');
-            li.innerHTML = text.value;
-            // 将创建的节点添加到ul里
-            container.insertBefore(li,container.children[0]);
+                var li = document.createElement('li');
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                // 将创建的节点添加到ul里
+                container.insertBefore(li,container.children[0]);
+                var as = li.querySelectorAll('a');
+                // 所有的a都要有点击事件,循环
+                for(i = 0; i<as.length; i++) {
+                    // 注意是第i个a点击了才触发事件
+                    as[i].onclick = function() {
+                        // 这里只能用this
+                        container.removeChild(this.parentNode);
+                    }
+                }
             }
         }
     </script>
